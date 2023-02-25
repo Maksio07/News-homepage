@@ -1,0 +1,455 @@
+@use './colors' as colors;
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: colors.$main-color;
+	font-family: 'Inter', sans-serif;
+}
+
+.wrapper {
+	margin: 3rem 2rem 2rem 2rem;
+	width: 120rem;
+	min-height: 150vh;
+}
+
+// NAVIGATION
+
+.active {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	width: 66%;
+	background-color: colors.$main-color;
+}
+
+
+.shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 220vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 100;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin: 1em 1rem;
+	height: 6rem;
+
+	&__title {
+		font-size: 4rem;
+		color: colors.$title-color;
+	}
+
+	&__box {
+		&--item {
+			margin: 1.6rem;
+			font-size: 1.6rem;
+			text-decoration: none;
+			font-weight: 400;
+			color: colors.$title-color;
+			cursor: pointer;
+			transition: color 0.3s;
+		}
+
+		&--item:hover {
+			color: colors.$hover-color;
+		}
+	}
+
+	&__icon {
+		display: none;
+
+		&--burger,
+		&--bars {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 1.2rem 1.2rem;
+			font-size: 3.6rem;
+			color: colors.$title-color;
+		}
+	}
+}
+
+
+
+
+
+
+// MAIN SECTION-ONE
+
+.main{
+
+	.section-box{
+		display: flex;
+	}
+}
+
+.section-one{
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 1rem;
+	max-width: 67%;
+
+	&__img{
+		width: 100%;
+		height: 28rem;
+		object-fit: cover;
+		background-size: cover;
+	}
+
+	&__text-box{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 2.4rem;
+
+		&--title{
+			width: 50%;
+			margin-right: 2rem;
+			letter-spacing: .2rem;
+			font-size: 5rem;
+			color: colors.$title-color;
+		}
+
+		&--text{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-left: 2.4rem;
+			width: 50%;
+			font-size: 1.5rem;
+			
+
+			.section-one__text-box--info{
+				color: colors.$text-color;
+				line-height: 180%;
+			}
+
+			.text-btn{
+				width: 50%;
+				padding: 1.2rem 2rem;
+				background-color: colors.$hover-color;
+				color: colors.$main-color;
+				border: none;
+				letter-spacing: .2rem;
+				text-transform: uppercase;
+				cursor: pointer;
+				transition: border .3s, background-color .3s;
+			}
+
+			.text-btn:hover{
+				background-color: colors.$title-color;
+				border: 1px solid #000213;
+			}
+		}	
+	}
+}
+
+// MAIN SECTION-TWO
+
+.section-two{
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 2.4rem 1rem 2rem;
+	max-width: 33%;
+	height: 100%;
+	background-color: colors.$title-color;
+
+	&__title{
+		margin: 2.8rem 2.4rem 0 2.4rem;
+		font-size: 2.8rem;
+		color: colors.$title-color-two;
+	}
+
+	&__card-box{
+		position: relative;
+		margin: .8rem 2.5rem;
+		padding: 3rem 0;
+
+		&--title{
+			margin-bottom: 1rem;
+			color: colors.$main-color;
+			font-size: 1.6rem;
+			cursor: pointer;
+			transition: color .3s;
+		}
+
+		&--title:hover{
+			color: colors.$title-color-two;
+		}
+
+		&--text{
+			margin: 1rem 0;
+			color: colors.$text-color-two;
+			text-align: 140%;
+			font-size: 1.4rem;
+		}
+
+		&--line{
+			position: absolute;
+			bottom: 0;
+			left: 2%;
+			width: 96%;
+			height: 0.2rem;
+			border: none;
+			background-color: colors.$text-color-two;
+		}
+	}
+
+}
+
+
+// MAIN SECTION-THREE
+
+.section-three{
+	display: flex;
+	justify-content: space-between;
+	margin: 4rem 1.4rem 2rem 1rem;
+	max-width: 120rem;
+
+	&__card-box{
+		display: flex;
+		height: 14rem;
+		width: 33%;
+
+
+		&__img{
+			width: 33%;
+			object-fit: cover;
+			background-size: cover;
+		}
+
+		&__info{
+			margin-left: 1.6rem;
+			height: 100%;
+			width: 67%;
+
+			&--number{
+				margin-bottom: 2rem;
+				font-size: 2.6rem;
+				color: colors.$title-color-light;
+			}
+
+			&--title{
+				margin-bottom: 2rem;
+				font-size: 1.8rem;
+				color: colors.$title-color;
+				cursor: pointer;
+				transition: color .3s;
+			}
+
+			&--title:hover{
+				color: colors.$hover-color;
+			}
+
+			&--text{
+				font-size: 1.4rem;
+				line-height: 160%;
+				color: colors.$text-color;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// MEDIA
+
+@media (max-width: 578px) {
+	.wrapper{
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.nav {
+		margin: 0;
+
+		&__title{
+			margin-left: 1rem;
+		}
+
+		&__box {
+			display: none;
+
+			&--item{
+				margin-left: 3rem;
+				font-size: 1.8rem;
+			}
+		}
+
+		&__icon {
+			display: block;
+			cursor: pointer;
+
+			&--burger {
+				display: block;
+
+			}
+		}
+	}
+
+	.section-box{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.section-one{
+		margin: 1 1rem;
+		max-width: 100%;
+
+		&__text-box{
+			display: flex;
+			flex-direction: column;
+
+			&--title{
+				margin-bottom: .5rem;
+				width: 100%;
+			}
+
+			&--text{
+				margin: 0;
+				width: 100%;
+
+				.section-one__text-box--info{
+					margin: .5rem 0 1.4rem 0;
+				}
+
+				.text-btn{
+					padding: 1rem 2rem;
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	.section-two{
+		margin: 0 1rem;
+		max-width: 100%;
+
+		&__title,
+		&__card-box{
+			margin-left: 1.2rem;
+			margin-right: 1.2rem;
+		}
+	}
+	
+
+	.section-three{
+		display: flex;
+		flex-direction: column;
+		margin: 2rem 1rem;
+		height: 1.8rem;
+		
+		
+		&__card-box{
+			width: 100%;
+			margin-bottom: 1.6rem;
+
+			&__info{
+				max-width: 54%;
+
+				&--number{
+					margin-bottom: 1rem;
+					font-size: 2.4rem;
+				}
+
+				&--title{
+					margin-bottom: 1rem;
+				}
+
+				&--text{
+					line-height: 120%;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+@media (min-width: 578px){
+	.wrapper{
+		margin: 1rem;
+	}
+
+	.nav{
+		&__box{
+			display: flex;
+		}
+	}
+
+	.section-one{
+			&__img{
+				background-image: url('../img/image-web-3-desktop.jpg');
+			}
+		}
+	}
+
+
+@media (min-width: 768px){
+	.section-three{
+		
+		&__card-box{
+		
+			&__info{
+
+				&--number{
+					margin-bottom: 1rem;
+					font-size: 2.4rem;
+				}
+
+				&--title{
+					margin-bottom: 1rem;
+				}
+
+				&--text{
+					line-height: 160%;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@media (min-width: 1200px) {
+	.wrapper {
+		max-width: 120rem;
+	}
+}
